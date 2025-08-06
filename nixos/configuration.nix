@@ -10,10 +10,9 @@
   ...
 }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-pc-linux-gnu";
  
   imports = [
-      ./nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
   ];
 
   wsl.enable = true;
@@ -34,6 +33,7 @@
     pkgs.hyfetch
     pkgs.fastfetch
     pkgs.alejandra
+    pkgs.git-credential-manager
   ];
 
   programs.neovim = {

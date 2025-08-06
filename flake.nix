@@ -12,12 +12,16 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # WSL
+    nixos-wsl.url = "github:nix-community/nixos-wsl";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nixos-wsl,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,6 +62,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          nixos-wsl.nixosModules.wsl
         ];
       };
     };
