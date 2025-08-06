@@ -34,6 +34,8 @@
     pkgs.fastfetch
     pkgs.alejandra
     pkgs.git-credential-manager
+    pkgs.gnupg
+    pkgs.pass
   ];
 
   programs.neovim = {
