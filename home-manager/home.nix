@@ -63,6 +63,10 @@
     userEmail = "voxxus@proton.me";
   };
 
+  home.sessionVariables = {
+    GCM_CREDENTIAL_STORE = "gpg";
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
