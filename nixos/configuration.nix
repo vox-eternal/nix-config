@@ -36,6 +36,7 @@
     pkgs.git-credential-manager
     pkgs.gnupg
     pkgs.pass
+    pkgs.systemd
   ];
 
   programs.neovim = {
