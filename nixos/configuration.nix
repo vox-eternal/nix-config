@@ -49,5 +49,8 @@
     enable = true;
   };
 
-  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-tty;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-tty;
+  };
 }
