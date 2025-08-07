@@ -37,6 +37,7 @@
     pkgs.gnupg
     pkgs.pass
     pkgs.systemd
+    pkgs.pinentry-tty
   ];
 
   programs.neovim = {
@@ -47,4 +48,6 @@
   programs.git = {
     enable = true;
   };
+
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-tty;
 }
