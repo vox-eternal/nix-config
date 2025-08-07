@@ -15,6 +15,9 @@
 
     # WSL
     nixos-wsl.url = "github:nix-community/nixos-wsl";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -22,6 +25,7 @@
     nixpkgs,
     home-manager,
     nixos-wsl,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -63,6 +67,7 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           nixos-wsl.nixosModules.wsl
+	  sops-nix.nixosModules.sops
         ];
       };
     };
