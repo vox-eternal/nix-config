@@ -5,6 +5,7 @@
   imports = [
     ../../homeModules/dev/nix.nix
     ../../homeModules/git/cli.nix
+    ../../homeModules/vscode.nix
   ];
 
   home.username = "voxxus";
