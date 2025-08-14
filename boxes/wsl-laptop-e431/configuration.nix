@@ -4,21 +4,31 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 {
-  config,
-  lib,
   pkgs,
+  inputs,
   ...
 }: {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
- 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   imports = [
-      ./hardware-configuration.nix
+    # USERS
+    ../../common/users/voxxus-wsl
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = "voxxus";
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
 
-  networking.hostName = "arcturus";
+  sops.age.keyFile = "/home/voxxus/.config/sops/age/keys.txt";
+
+  wsl = {
+    enable = true;
+    defaultUser = "voxxus";
+    wslConf = {
+      network = {
+        hostname = "izar";
+      };
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -28,16 +38,17 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
-  environment.systemPackages = [
-    pkgs.xclip
-    pkgs.hyfetch
-    pkgs.fastfetch
-    pkgs.alejandra
-    pkgs.git-credential-manager
-    pkgs.gnupg
-    pkgs.pass
-    pkgs.systemd
-    pkgs.pinentry-tty
+  environment.systemPackages = with pkgs; [
+    xclip
+    hyfetch
+    fastfetch
+    alejandra
+    systemd
+    sops
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.droid-sans-mono
   ];
 
   programs.neovim = {
@@ -45,12 +56,5 @@
     defaultEditor = true;
   };
 
-  programs.git = {
-    enable = true;
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-tty;
-  };
+  programs.fish.enable = true;
 }
