@@ -1,6 +1,4 @@
-{ NAME }:
-{ unstable, ... }:
-{
+{NAME}: {unstable, ...}: {
   programs = {
     nh = {
       enable = true;

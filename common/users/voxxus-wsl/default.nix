@@ -1,27 +1,31 @@
-{ pkgs, inputs, stable, unstable, ... }:
-let
- NAME = "voxxus";
-in 
 {
- imports = [
-  (import ../../systemModules/nixHelper.nix { inherit NAME; })
- ];
- users = {
+  pkgs,
+  inputs,
+  stable,
+  unstable,
+  ...
+}: let
+  NAME = "voxxus";
+in {
+  imports = [
+    (import ../../systemModules/nixHelper.nix {inherit NAME;})
+  ];
   users = {
-    "${NAME}" = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-      ];
-      shell = pkgs.fish;
+    users = {
+      "${NAME}" = {
+        isNormalUser = true;
+        extraGroups = [
+          "wheel"
+        ];
+        shell = pkgs.fish;
+      };
     };
   };
- };
- home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs stable unstable; };
-  users = {
-    "${NAME}" = import ./home.nix;
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = {inherit inputs stable unstable;};
+    users = {
+      "${NAME}" = import ./home.nix;
+    };
   };
- };
 }
