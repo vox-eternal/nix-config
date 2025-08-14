@@ -11,6 +11,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   imports = [
+    ../../common/systemModules/crypt.nix
     # USERS
     ../../common/users/voxxus-wsl
   ];
@@ -37,9 +38,6 @@
     xclip
     hyfetch
     fastfetch
-    alejandra
-    systemd
-    sops
   ];
 
   fonts.packages = with pkgs; [

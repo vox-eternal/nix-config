@@ -9,6 +9,7 @@
 in {
   imports = [
     (import ../../systemModules/nixHelper.nix {inherit NAME;})
+    (import ../../systemModules/sops.nix {inherit NAME;})
   ];
   users = {
     users = {
