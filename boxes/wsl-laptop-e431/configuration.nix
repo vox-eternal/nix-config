@@ -15,11 +15,6 @@
     ../../common/users/voxxus-wsl
   ];
 
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  sops.age.keyFile = "/home/voxxus/.config/sops/age/keys.txt";
-
   wsl = {
     enable = true;
     defaultUser = "voxxus";

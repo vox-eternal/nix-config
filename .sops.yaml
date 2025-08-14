@@ -1,9 +1,9 @@
 # .sops.yaml
 
 keys:
-  - &primary age1f5jar4fe3fy8pqs9qkvs7y72etnsaekxv9fr08nem5svt3l9meusaw4zqt
+  - &wsl-laptop-e431 age1f5jar4fe3fy8pqs9qkvs7y72etnsaekxv9fr08nem5svt3l9meusaw4zqt
 creation_rules:
-  - path_regex: secrets/secrets.yaml$
+  - path_regex: secrets/hosts
     key_groups:
     - age:
-      - *primary
+      - *wsl-laptop-e431

@@ -6,6 +6,7 @@
     ../../homeModules/dev/nix.nix
     ../../homeModules/git/cli.nix
     ../../homeModules/vscode.nix
+    ../../homeModules/sops.nix
   ];
 
   home.username = "voxxus";
