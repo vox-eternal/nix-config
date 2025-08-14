@@ -7,6 +7,7 @@
     ../../homeModules/git/cli.nix
     ../../homeModules/vscode.nix
     ../../homeModules/sops.nix
+    ../../homeModules/zsh.nix
   ];
 
   home.username = "voxxus";
