@@ -23,6 +23,7 @@ in {
   };
   home-manager = {
     useUserPackages = true;
+    backupFileExtension = "bak";
     extraSpecialArgs = {inherit inputs stable unstable;};
     users = {
       "${NAME}" = import ./home.nix;
