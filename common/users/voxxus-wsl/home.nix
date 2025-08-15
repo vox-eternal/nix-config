@@ -11,6 +11,7 @@
     ../../homeModules/web.nix
     ../../homeModules/terminal.nix
     ../../homeModules/btop.nix
+    ../../homeModules/nvim.nix
   ];
 
   home.username = "voxxus";

@@ -14,4 +14,9 @@
       };
     };
   };
+  home = {
+    sessionVariables = {
+      DONT_PROMPT_WSL_INSTALL = "true";
+    };
+  };
 }

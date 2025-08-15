@@ -22,6 +22,7 @@ in {
       };
     };
   };
+  programs.zsh.enable = true;
   home-manager = {
     useUserPackages = true;
     backupFileExtension = "bak";

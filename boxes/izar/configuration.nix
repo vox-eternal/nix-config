@@ -38,19 +38,9 @@
 
   environment.systemPackages = with pkgs; [
     xclip
-    hyfetch
-    fastfetch
   ];
 
   fonts.packages = with pkgs; [
-    nerd-fonts.droid-sans-mono
     nerd-fonts.comic-shanns-mono
   ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  programs.zsh.enable = true;
 }
