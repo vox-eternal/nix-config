@@ -9,6 +9,8 @@
     ../../homeModules/sops.nix
     ../../homeModules/zsh.nix
     ../../homeModules/web.nix
+    ../../homeModules/terminal.nix
+    ../../homeModules/btop.nix
   ];
 
   home.username = "voxxus";

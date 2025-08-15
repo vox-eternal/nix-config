@@ -46,7 +46,7 @@
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
-          wsl-laptop-e431 = nixpkgs.lib.nixosSystem rec {
+          izar = nixpkgs.lib.nixosSystem rec {
             system = "x86_64-linux";
             specialArgs = {
               inherit inputs;
@@ -66,7 +66,7 @@
                   };
                 }
               )
-              ./boxes/wsl-laptop-e431/configuration.nix
+              ./boxes/izar/configuration.nix
               nixos-wsl.nixosModules.wsl
               sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.default
