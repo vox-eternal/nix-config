@@ -8,6 +8,7 @@
     ../../homeModules/vscode.nix
     ../../homeModules/sops.nix
     ../../homeModules/zsh.nix
+    ../../homeModules/web.nix
   ];
 
   home.username = "voxxus";
