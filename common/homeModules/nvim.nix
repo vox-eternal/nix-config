@@ -10,6 +10,9 @@
   home = {
     packages = with pkgs; [
       nvimpager
+      # to build lsp servers
+      cargo
+      rustc
     ];
     file = {
       nvim = {

@@ -2,7 +2,8 @@
 {
   home = {
     packages = with pkgs; [
-      rustup
+      rustc
+      cargo
       cargo-watch
       gcc
     ];
