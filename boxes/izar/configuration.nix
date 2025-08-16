@@ -42,5 +42,10 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.comic-shanns-mono
+    powerline-symbols
+  ];
+  
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
   ];
 }
