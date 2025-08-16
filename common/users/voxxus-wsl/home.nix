@@ -4,6 +4,7 @@
 
   imports = [
     ../../homeModules/dev/nix.nix
+    ../../homeModules/dev/rust.nix
     ../../homeModules/git/cli.nix
     ../../homeModules/vscode.nix
     ../../homeModules/sops.nix
