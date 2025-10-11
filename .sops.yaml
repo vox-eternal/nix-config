@@ -1,13 +1,10 @@
 # .sops.yaml
 
 keys:
-  - &wsl-laptop-e431 age1f5jar4fe3fy8pqs9qkvs7y72etnsaekxv9fr08nem5svt3l9meusaw4zqt
+  - &voxxus ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvfKXZIlS+G2z2Aws7MjGUHdVqoGNCFkWeKvX2w41Wl
+
 creation_rules:
-  - path_regex: secrets/hosts
+  - path_regex: secrets/voxxus\.yaml
     key_groups:
     - age:
-      - *wsl-laptop-e431
-  - path_regex: .yaml$
-    key_groups:
-    - age:
-      - *wsl-laptop-e431
+      - *voxxus

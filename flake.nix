@@ -1,80 +1,73 @@
 {
-  description = "NixOS config flake";
+  description = "Voxxus's dotfiles";
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} {imports = [./modules/flake];};
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # our main package supplier
+    #
+    # you may also notice that I don't use a `github:` url for nixpkgs this is
+    # beacuse we can save 15mb of data by using the channel tarball this is not
+    # a major saving but it is nice to have
+    # https://deer.social/profile/did:plc:mojgntlezho4qt7uvcfkdndg/post/3loogwsoqok2w
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+    lix = {
+      type = "github";
+      owner = "isabelroses";
+      repo = "izlix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # improved support for wsl
     nixos-wsl = {
-      url = "github:nix-community/nixos-wsl";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+      type = "github";
+      owner = "nix-community";
+      repo = "NixOS-WSL";
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    nixos-wsl,
-    sops-nix,
-    flake-parts,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      debug = true;
-      systems = ["x86_64-linux"];
-      perSystem = {config, ...}: {};
-      flake = {
-        # NixOS configuration entrypoint
-        # Available through 'nixos-rebuild --flake .#your-hostname'
-        nixosConfigurations = {
-          izar = nixpkgs.lib.nixosSystem rec {
-            system = "x86_64-linux";
-            specialArgs = {
-              inherit inputs;
-              isWsl = true;
-              unstable = import nixpkgs-unstable {
-                inherit system;
-                config = {
-                  allowUnfree = true;
-                };
-              };
-            };
-            modules = [
-              (
-                {pkgs, ...}: {
-                  _module.args = {
-                    stable = pkgs;
-                  };
-                }
-              )
-              ./boxes/izar/configuration.nix
-              nixos-wsl.nixosModules.wsl
-              sops-nix.nixosModules.sops
-              inputs.home-manager.nixosModules.default
-              inputs.nix-index-database.nixosModules.nix-index
-              {programs.nix-index-database.comma.enable = true;}
-            ];
-          };
-        };
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "";
       };
     };
+
+    # manage userspace with nix
+    home-manager = {
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ### Flake management
+    # bring all the mess together with flake-parts
+    flake-parts = {
+      type = "github";
+      owner = "hercules-ci";
+      repo = "flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    # easily manage our hosts
+    easy-hosts = {
+      type = "github";
+      owner = "tgirlcloud";
+      repo = "easy-hosts";
+    };
+
+    # Secrets, shhh
+    sops = {
+      type = "github";
+      owner = "Mic92";
+      repo = "sops-nix";
+      ref = "pull/779/merge";
+    };
+
+    # transative deps
+    systems = {
+      type = "github";
+      owner = "nix-systems";
+      repo = "default";
+    };
+  };
 }
