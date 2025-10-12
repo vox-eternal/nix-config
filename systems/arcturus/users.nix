@@ -4,7 +4,6 @@
 
     programs = {
       fish.enable = true;
-      discord.enable = true;
       firefox.enable = true;
     };
   };

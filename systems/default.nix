@@ -25,6 +25,10 @@
     #  modules = [ ];
     #  specialArgs = { };
     hosts = {
+      arcturus = {
+        class = "nixos";
+      };
+
       izar = {
         class = "wsl";
       };

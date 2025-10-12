@@ -6,6 +6,7 @@
     ./programs
     ./profiles.nix
     ./home.nix
+    ./environment
     ./secrets.nix
   ];
 }

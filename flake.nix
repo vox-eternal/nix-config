@@ -69,5 +69,23 @@
       owner = "nix-systems";
       repo = "default";
     };
+
+    # declaritively manage vencord settings
+    nixcord = {
+      type = "github";
+      owner = "kaylorben";
+      repo = "nixcord";
+    };
+
+    # secure boot
+    lanzaboote = {
+      type = "github";
+      owner = "nix-community";
+      repo = "lanzaboote";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 }

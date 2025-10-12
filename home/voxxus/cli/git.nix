@@ -10,7 +10,7 @@
 in {
   config = mkIf config.garden.profiles.workstation.enable {
     programs.git = {
-	enable = true;
+      enable = true;
 
       package = pkgs.git;
       userName = "vox-eternal";

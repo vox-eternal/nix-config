@@ -1,7 +1,7 @@
 # .sops.yaml
 
 keys:
-  - &voxxus ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvfKXZIlS+G2z2Aws7MjGUHdVqoGNCFkWeKvX2w41Wl
+  - &voxxus ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOdQL526T83qJ+JVXfBiNrcyCPqnxSkFYwi+dp+YCpF9
 
 creation_rules:
   - path_regex: secrets/voxxus\.yaml
