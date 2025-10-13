@@ -87,5 +87,12 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    # extensible spotify
+    spicetify = {
+    	type = "github";
+	owner = "Gerg-L";
+	repo = "spicetify-nix";
+};
   };
 }
