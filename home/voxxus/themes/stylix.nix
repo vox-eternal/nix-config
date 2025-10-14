@@ -20,8 +20,8 @@ in {
         enable = true;
       };
       nixcord = {
-      	enable = false;
-	};
+        enable = false;
+      };
     };
 
     fonts = {

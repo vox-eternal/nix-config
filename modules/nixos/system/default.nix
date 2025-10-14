@@ -1,5 +1,5 @@
 {
-	imports = [
-		./xdg-portals.nix
-	];
+  imports = [
+    ./xdg-portals.nix
+  ];
 }

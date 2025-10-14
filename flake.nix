@@ -104,9 +104,9 @@
 
     # wl compositor
     fht-compositor = {
-    	type = "github";
-	owner = "nferhat";
-	repo = "fht-compositor";
+      type = "github";
+      owner = "nferhat";
+      repo = "fht-compositor";
     };
   };
 }

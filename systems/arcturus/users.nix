@@ -6,7 +6,8 @@
       fish.enable = true;
       firefox.enable = true;
       fht-compositor.enable = true;
-      alacritty.enable = true;
+      ghostty.enable = true;
+      quickshell.enable = true;
     };
   };
 }

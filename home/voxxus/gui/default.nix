@@ -4,5 +4,7 @@
     ./spicetify.nix
     ./firefox.nix
     ./fht-compositor.nix
+    ./ghostty.nix
+    ./quickshell.nix
   ];
 }

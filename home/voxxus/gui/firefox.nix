@@ -65,9 +65,18 @@ in {
         "browser.newtabpage.activity-stream.showWeather" = lock-false;
         "browser.urlbar.suggest.quickactions" = lock-false;
         "browser.urlbar.suggest.engines" = lock-false;
-	"browser.theme.content-theme" = { Value = 0; Status = "locked"; };
-	"browser.theme.toolbar-theme" = { Value = 0; Status = "locked"; };
-	"browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine" = { Value = "DuckDuckGo"; Status = "locked"; };
+        "browser.theme.content-theme" = {
+          Value = 0;
+          Status = "locked";
+        };
+        "browser.theme.toolbar-theme" = {
+          Value = 0;
+          Status = "locked";
+        };
+        "browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine" = {
+          Value = "DuckDuckGo";
+          Status = "locked";
+        };
       };
     };
   };
