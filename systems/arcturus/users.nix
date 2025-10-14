@@ -5,6 +5,8 @@
     programs = {
       fish.enable = true;
       firefox.enable = true;
+      fht-compositor.enable = true;
+      alacritty.enable = true;
     };
   };
 }

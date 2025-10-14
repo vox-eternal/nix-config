@@ -14,6 +14,7 @@ in {
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "bak";
+    overwriteBackup = true;
 
     users = genAttrs config.garden.system.users (name: {
       imports = [./${name}];

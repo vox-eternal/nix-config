@@ -132,8 +132,9 @@ in {
       # build from source if the build fails from a binary source
       # fallback = true;
 
-      # this defaults to true, however it slows down evaluation so it's been disabled
-      allow-import-from-derivation = false;
+      # this defaults to true, however it slows down evaluation so i could disable it
+      # but it's necessary for stylix, so i don't
+      allow-import-from-derivation = true;
 
       # for direnv GC roots
       keep-derivations = true;

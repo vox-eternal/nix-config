@@ -1,6 +1,6 @@
 {
-	imports = [
-		./gamemode.nix
-		./steam.nix
-	];
+  imports = [
+    ./gamemode.nix
+    ./steam.nix
+  ];
 }

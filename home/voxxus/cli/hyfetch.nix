@@ -1,6 +1,5 @@
-{ config, ...}:
-{
-	programs.hyfetch = {
-		enable = true;
-	};
+{config, ...}: {
+  programs.hyfetch = {
+    enable = true;
+  };
 }

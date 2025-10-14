@@ -1,6 +1,5 @@
-{ config, ... }:
-{
-	programs.fastfetch = {
-		enable = true;
-	};
+{config, ...}: {
+  programs.fastfetch = {
+    enable = true;
+  };
 }

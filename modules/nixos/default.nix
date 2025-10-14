@@ -10,6 +10,8 @@
     ./networking
     ./hardware
     ./gaming
+    ./programs
+    ./system
     ./secrets.nix
   ];
 }

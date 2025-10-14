@@ -4,5 +4,6 @@
     ./cli
     ./gui
     ./system
+    ./themes
   ];
 }

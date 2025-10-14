@@ -1,17 +1,20 @@
-{ config, inputs, inputs', ... }:
-let
-	spicePkgs = inputs'.spicetify.legacyPackages;
-in
 {
-	imports = [ inputs.spicetify.homeManagerModules.default ];
+  config,
+  inputs,
+  inputs',
+  ...
+}: let
+  spicePkgs = inputs'.spicetify.legacyPackages;
+in {
+  imports = [inputs.spicetify.homeManagerModules.default];
 
-	programs.spicetify = {
-		enable = true;
+  programs.spicetify = {
+    enable = true;
 
-		enabledExtensions = with spicePkgs.extensions; [
-			adblock
-			hidePodcasts
-			shuffle
-		];
-	};
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle
+    ];
+  };
 }

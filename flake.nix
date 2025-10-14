@@ -90,9 +90,23 @@
 
     # extensible spotify
     spicetify = {
+      type = "github";
+      owner = "Gerg-L";
+      repo = "spicetify-nix";
+    };
+
+    # universal styling
+    stylix = {
+      type = "github";
+      owner = "nix-community";
+      repo = "stylix";
+    };
+
+    # wl compositor
+    fht-compositor = {
     	type = "github";
-	owner = "Gerg-L";
-	repo = "spicetify-nix";
-};
+	owner = "nferhat";
+	repo = "fht-compositor";
+    };
   };
 }
