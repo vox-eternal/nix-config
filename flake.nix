@@ -1,7 +1,7 @@
 {
   description = "Voxxus's dotfiles";
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} {imports = [./modules/flake];};
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs; } {imports = [./modules/flake];};
 
   inputs = {
     # our main package supplier
@@ -107,6 +107,18 @@
       type = "github";
       owner = "nferhat";
       repo = "fht-compositor";
+    };
+
+    nixpkgs-xr = {
+  	type = "github";
+	owner = "nix-community";
+	repo = "nixpkgs-xr";
+    };
+
+    vivepro2-linux-driver = {
+    	type = "github";
+	owner = "CertainLach";
+	repo = "VivePro2-Linux-Driver";
     };
   };
 }

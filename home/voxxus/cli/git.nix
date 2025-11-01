@@ -17,7 +17,7 @@ in {
       userEmail = "voxxus" + "@" + "proton" + "." + "me"; # webscrapers can go die
 
       lfs = {
-        enable = false;
+        enable = true;
         skipSmudge = true;
       };
 
