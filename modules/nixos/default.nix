@@ -12,6 +12,7 @@
     ./gaming
     ./programs
     ./system
+    ./development
     ./secrets.nix
   ];
 }

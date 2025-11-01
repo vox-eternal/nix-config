@@ -5,5 +5,6 @@
     ./gui
     ./system
     ./themes
+    ./packages.nix
   ];
 }

@@ -6,5 +6,6 @@
     ./fht-compositor.nix
     ./ghostty.nix
     ./quickshell.nix
+    ./opencomposite.nix
   ];
 }

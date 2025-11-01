@@ -7,6 +7,7 @@
   inherit (config.garden.programs) defaults;
 in {
   config = lib.mkIf config.programs.fht-compositor.enable {
+    garden.packages = { inherit (pkgs) cosmic-files; };
     programs.fht-compositor.settings = {
       env = {
         DISPLAY = ":0";

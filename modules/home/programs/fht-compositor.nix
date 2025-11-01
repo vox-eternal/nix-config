@@ -9,6 +9,11 @@
   imports = [inputs.fht-compositor.homeModules.default];
 
   config = lib.mkIf config.programs.fht-compositor.enable {
+    programs.fht-compositor.settings = {
+      autostart = [
+        "wl-paste --watch cliphist store"
+      ];
+    };
     systemd.user.services.xwayland-satellite = {
       Unit = {
         Description = "Xwayland satellite service";

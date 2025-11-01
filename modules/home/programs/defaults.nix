@@ -36,7 +36,7 @@ in {
         "dolphin"
         "nemo"
       ];
-      default = "dolphin";
+      default = "cosmic-files";
     };
 
     browser = {

@@ -28,6 +28,11 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
+  fileSystems."/media/docallisk" = {
+    device = "/dev/disk/by-uuid/7fe6d76e-6c66-449e-be20-408d19d5507c";
+    fsType = "ext4";
+  };
+
   swapDevices = [
     {
       device = "/swap";
