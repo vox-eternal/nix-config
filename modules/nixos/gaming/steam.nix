@@ -39,23 +39,26 @@ in {
     };
 
     programs.steam = let
-      patchedBwrap = pkgs.bubblewrap.overrideAttrs(o: {
-	patches = (o.patches or []) ++ [
-	  ./bwrap.patch
-	];
+      patchedBwrap = pkgs.bubblewrap.overrideAttrs (o: {
+        patches =
+          (o.patches or [])
+          ++ [
+            ./bwrap.patch
+          ];
       });
-      in {
-	      enable = true;
-	      extraCompatPackages = [pkgs.proton-ge-bin.steamcompattool];
-	      gamescopeSession.enable = cfg.gamescopeSession.enable;
-	      package = pkgs.steam.override { 
-	        buildFHSEnv = (args: ((pkgs.buildFHSEnv.override {
-		  bubblewrap = patchedBwrap;
-		}) (args // {
-		  extraBwrapArgs = (args.extraBwrapArgs or []) ++ [ "--cap-add ALL" ]; 
-		})));
-	      };
-	};
+    in {
+      enable = true;
+      extraCompatPackages = [pkgs.proton-ge-bin.steamcompattool];
+      gamescopeSession.enable = cfg.gamescopeSession.enable;
+      package = pkgs.steam.override {
+        buildFHSEnv = args: ((pkgs.buildFHSEnv.override {
+            bubblewrap = patchedBwrap;
+          }) (args
+            // {
+              extraBwrapArgs = (args.extraBwrapArgs or []) ++ ["--cap-add ALL"];
+            }));
+      };
+    };
 
     garden.packages = {
       exec-gamescope = pkgs.writeShellApplication {

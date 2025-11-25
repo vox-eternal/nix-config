@@ -1,6 +1,12 @@
-{ config, osConfig, pkgs, self, lib, ... }:
 {
-	programs.quickshell = {
-		systemd.enable = true;
-	};	
+  config,
+  osConfig,
+  pkgs,
+  self,
+  lib,
+  ...
+}: {
+  programs.quickshell = {
+    systemd.enable = true;
+  };
 }

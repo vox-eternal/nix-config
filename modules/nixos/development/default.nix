@@ -1,6 +1,6 @@
 {
-	imports = [
-		./rust.nix
-		./node.nix
-	];
+  imports = [
+    ./rust.nix
+    ./node.nix
+  ];
 }

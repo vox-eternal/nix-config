@@ -1,5 +1,8 @@
-{pkgs,inputs,...}:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./users.nix
     ./hardware-configuration.nix
@@ -23,7 +26,7 @@
     settings = {
       General = {
         Experimental = true;
-	FastConnectable = true;
+        FastConnectable = true;
       };
       Policy = {
         AutoEnable = true;
@@ -33,32 +36,32 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-  	xorg.libX11
-	xorg.libXcursor
-	xorg.libXext
-	xorg.xinput
-	xorg.libXi
-	xorg.libXcomposite
-	xorg.libXdamage
-	xorg.libXinerama
-	libxrender
-	glib
-	nspr
-	nss_latest
-	dbus
-	at-spi2-atk
-	cups
-	cairo
-	gtk3
-	pango
-	libxfixes
-	libxrandr
-	libgbm
-	expat
-	libxcb
-	libxkbcommon
-	alsa-lib
-	libGL
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXext
+    xorg.xinput
+    xorg.libXi
+    xorg.libXcomposite
+    xorg.libXdamage
+    xorg.libXinerama
+    libxrender
+    glib
+    nspr
+    nss_latest
+    dbus
+    at-spi2-atk
+    cups
+    cairo
+    gtk3
+    pango
+    libxfixes
+    libxrandr
+    libgbm
+    expat
+    libxcb
+    libxkbcommon
+    alsa-lib
+    libGL
     icu
   ];
 
