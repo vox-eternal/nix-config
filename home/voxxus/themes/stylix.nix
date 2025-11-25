@@ -22,6 +22,7 @@ in {
       nixcord = {
         enable = false;
       };
+      neovim.enable = false;
     };
 
     fonts = {

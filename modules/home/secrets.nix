@@ -8,7 +8,7 @@
   imports = [inputs.sops.homeManagerModules.sops];
 
   config.sops = {
-    defaultSopsFile = "${self}/secets/${name}.yaml";
+    defaultSopsFile = "${self}/secrets/${name}.yaml";
     age.sshKeyFile = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
   };
 }

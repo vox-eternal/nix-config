@@ -40,6 +40,8 @@
 	xorg.libXi
 	xorg.libXcomposite
 	xorg.libXdamage
+	xorg.libXinerama
+	libxrender
 	glib
 	nspr
 	nss_latest
@@ -57,6 +59,7 @@
 	libxkbcommon
 	alsa-lib
 	libGL
+    icu
   ];
 
   services.flatpak.enable = true;
